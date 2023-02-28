@@ -83,9 +83,9 @@ puts "#{user7.first_name} #{user7.last_name} created."
 puts "Creating LifeTrial listings for Henry VIII"
 
 listing_one = Listing.new(
-  title: "A Day on the Throne",
+  title: "A day on the Throne with Henry VIII",
   category: "Royalty",
-  price: rand(1..10),
+  price: rand(1..100_000_000),
   description: "Come and be me for a day on the throne.",
   user_id: user3.id
 )
@@ -96,14 +96,14 @@ listing_one.save!
 puts "#{user3.first_name} #{user3.last_name}: #{listing_one.title} created."
 
 listing_two = Listing.new(
-  title: "A Day at Home with Henry VIII and the Royal Family",
+  title: "A day at home with Henry VIII and his six wives",
   category: "Royalty",
-  price: rand(1..10),
-  description: "Come and be me for a day at home with the Royal Family.",
+  price: rand(1..100_000_000),
+  description: "Come and be me for a day at home with my six wives.",
   user_id: user3.id
 )
-file_two = URI.open("https://www.discoverbritainmag.com/wp-content/uploads/2017/08/CROP-HENRY.jpg")
-listing_two.photo.attach(io: file_two, filename: "#{file_two}.png", content_type: "image/png")
+file_two = URI.open("http://images.summitmedia-digital.com/esquiremagph/images/gallery/2634/MAINKINGHENRYVIIIWIVES_main.jpg")
+listing_two.photos.attach(io: file_two, filename: "#{file_two}.png", content_type: "image/png")
 listing_two.save!
 
 puts "#{user3.first_name} #{user3.last_name}: #{listing_two.title} created."
@@ -111,27 +111,27 @@ puts "#{user3.first_name} #{user3.last_name}: #{listing_two.title} created."
 puts "Creating LifeTrial listings for Neil Armstrong"
 
 listing_three = Listing.new(
-  title: "A Day on the Moon",
+  title: "A day on the Moon with Neil Armstrong",
   category: "Record Breakers",
-  price: rand(1..10),
+  price: rand(1..100_000_000),
   description: "Come and be me for a day on the moon.",
   user_id: user4.id
 )
 file_three = URI.open("https://www.mashed.com/img/gallery/the-first-astronaut-to-bring-chocolate-into-space/l-intro-1666923799.jpg")
-listing_three.photo.attach(io: file_three, filename: "#{file_three}.png", content_type: "image/png")
+listing_three.photos.attach(io: file_three, filename: "#{file_three}.png", content_type: "image/png")
 listing_three.save!
 
 puts "#{user4.first_name} #{user4.last_name}: #{listing_three.title} created."
 
 listing_four = Listing.new(
-  title: "A Day at Home with Neil Armstrong and his Family",
+  title: "A day at home with Neil Armstrong and his family",
   category: "Record Breakers",
-  price: rand(1..10),
+  price: rand(1..100_000_000),
   description: "Come and be me for a day at home with the family.",
   user_id: user4.id
 )
-file_four = URI.open("https://www.mashed.com/img/gallery/the-first-astronaut-to-bring-chocolate-into-space/l-intro-1666923799.jpg")
-listing_four.photo.attach(io: file_four, filename: "#{file_four}.png", content_type: "image/png")
+file_four = URI.open("https://i2-prod.mirror.co.uk/incoming/article17797870.ece/ALTERNATES/s1200d/1_Astronaut-Neil-Armstrong.jpg")
+listing_four.photos.attach(io: file_four, filename: "#{file_four}.png", content_type: "image/png")
 listing_four.save!
 
 puts "#{user4.first_name} #{user4.last_name}: #{listing_four.title} created."
@@ -139,27 +139,27 @@ puts "#{user4.first_name} #{user4.last_name}: #{listing_four.title} created."
 puts "Creating LifeTrial listings for Christiano Ronaldo"
 
 listing_five = Listing.new(
-  title: "A Day on the Pitch",
+  title: "A day on the Football Pitch with Christiano Ronaldo",
   category: "Sports People",
-  price: rand(1..10),
+  price: rand(1..100_000_000),
   description: "Come and be me for a day on the football pitch.",
   user_id: user5.id
 )
-file_five = URI.open("https://static.dw.com/image/64258094_605.jpg")
-listing_five.photo.attach(io: file_five, filename: "#{file_five}.png", content_type: "image/png")
+file_five = URI.open("https://e0.365dm.com/22/07/2048x1152/skysports-cristiano-ronaldo_5823297.jpg")
+listing_five.photos.attach(io: file_five, filename: "#{file_five}.png", content_type: "image/png")
 listing_five.save!
 
 puts "#{user5.first_name} #{user5.last_name}: #{listing_five.title} created."
 
 listing_six = Listing.new(
-  title: "A Day at Home with Christiano Ronaldo and his Family",
+  title: "A day at home with Christiano Ronaldo and his family",
   category: "Sports People",
-  price: rand(1..10),
+  price: rand(1..100_000_000),
   description: "Come and be me for a day at home with the family.",
   user_id: user5.id
 )
 file_six = URI.open("https://static.dw.com/image/64258094_605.jpg")
-listing_six.photo.attach(io: file_six, filename: "#{file_six}.png", content_type: "image/png")
+listing_six.photos.attach(io: file_six, filename: "#{file_six}.png", content_type: "image/png")
 listing_six.save!
 
 puts "#{user5.first_name} #{user5.last_name}: #{listing_six.title} created."
@@ -167,27 +167,27 @@ puts "#{user5.first_name} #{user5.last_name}: #{listing_six.title} created."
 puts "Creating LifeTrial listings for Marilyn Monroe"
 
 listing_seven = Listing.new(
-  title: "A Day on the Film Set",
-  category: "Actors",
-  price: rand(1..10),
+  title: "A day on the Hollywood Film Set with Marilyn Monroe",
+  category: "Actors & Actresses",
+  price: rand(1..100_000_000),
   description: "Come and be me for a day on the film set. I wake up early, eat breakfast with my cats, then have my make-up and hair done - red lips and trademark platinum curls, before arriving on the film set to shoot my latest Hollywood movie. After the morning's filming, I'd go for lunch at my favourite 5* restaurant in Los Angeles, and end the day with a relaxing spa treatment.",
   user_id: user6.id
 )
-file_seven = URI.open("https://www.history.com/.image/ar_16:9%2Cc_fill%2Ccs_srgb%2Cfl_progressive%2Cq_auto:good%2Cw_1200/MTY1ODkxNzE2MjEyMDczNTM5/tdih-marilyn-monroe-gettyimages-53376357.jpg")
-listing_seven.photo.attach(io: file_seven, filename: "#{file_seven}.png", content_type: "image/png")
+file_seven = URI.open("https://hips.hearstapps.com/hbz.h-cdn.co/assets/16/15/1460562624-hbz-marilyn-monroe-on-set-gettyimages-504804516-index.jpg")
+listing_seven.photos.attach(io: file_seven, filename: "#{file_seven}.png", content_type: "image/png")
 listing_seven.save!
 
 puts "#{user6.first_name} #{user6.last_name}: #{listing_seven.title} created."
 
 listing_eight = Listing.new(
-  title: "A Day at Home with Marilyn Monroe and her Family",
-  category: "Actors",
-  price: rand(1..10),
+  title: "A day at home with Marilyn Monroe and her family",
+  category: "Actors & Actresses",
+  price: rand(1..100_000_000),
   description: "Come and be me for a day at home with the family.",
   user_id: user6.id
 )
 file_eight = URI.open("https://www.history.com/.image/ar_16:9%2Cc_fill%2Ccs_srgb%2Cfl_progressive%2Cq_auto:good%2Cw_1200/MTY1ODkxNzE2MjEyMDczNTM5/tdih-marilyn-monroe-gettyimages-53376357.jpg")
-listing_eight.photo.attach(io: file_eight, filename: "#{file_eight}.png", content_type: "image/png")
+listing_eight.photos.attach(io: file_eight, filename: "#{file_eight}.png", content_type: "image/png")
 listing_eight.save!
 
 puts "#{user6.first_name} #{user6.last_name}: #{listing_eight.title} created."
@@ -195,27 +195,27 @@ puts "#{user6.first_name} #{user6.last_name}: #{listing_eight.title} created."
 puts "Creating LifeTrial listings for Dolly Parton"
 
 listing_nine = Listing.new(
-  title: "A '9-5' Day in the Recording Studio",
-  category: "Actors",
-  price: rand(1..10),
+  title: "A '9-5' day in the Recording Studio with Dolly Parton",
+  category: "Musicians",
+  price: rand(1..100_000_000),
   description: "Come and be me for a day in the recording studio. I usually work '9 to 5' and start the day with breakfast at my favourite Nashville coffee shop, before my chauffeur picks me up to take me to the recording studio. I'd get in the zone by singing a version of 'Jolene' and spend the day jamming out with all my studio musicians. I'd head on to my favourite restaurant and spend the rest of the evening dancing in a country music bar.",
   user_id: user7.id
 )
-file_nine = URI.open("https://images.squarespace-cdn.com/content/v1/5a77442b29f187714050c37c/1536711590158-WGGIU8539D3VA6U8E8VB/Young-Dolly-Parton+copy.jpg?format=1500w")
-listing_nine.photo.attach(io: file_nine, filename: "#{file_nine}.png", content_type: "image/png")
+file_nine = URI.open("https://www.dollymania.net/Dolly_Parton_Pirates_Voyage_Soundtrack_Large.jpg")
+listing_nine.photos.attach(io: file_nine, filename: "#{file_nine}.png", content_type: "image/png")
 listing_nine.save!
 
 puts "#{user7.first_name} #{user7.last_name}: #{listing_nine.title} created."
 
 listing_ten = Listing.new(
-  title: "A Day at Home with Dolly Parton and her Family",
-  category: "Actors",
-  price: rand(1..10),
+  title: "A day at home with Dolly Parton and her family",
+  category: "Musicians",
+  price: rand(1..100_000_000),
   description: "Come and be me for a day at home with the family.",
   user_id: user7.id
 )
 file_ten = URI.open("https://images.squarespace-cdn.com/content/v1/5a77442b29f187714050c37c/1536711590158-WGGIU8539D3VA6U8E8VB/Young-Dolly-Parton+copy.jpg?format=1500w")
-listing_ten.photo.attach(io: file_ten, filename: "#{file_ten}.png", content_type: "image/png")
+listing_ten.photos.attach(io: file_ten, filename: "#{file_ten}.png", content_type: "image/png")
 listing_ten.save!
 
 puts "#{user7.first_name} #{user7.last_name}: #{listing_ten.title} created."
