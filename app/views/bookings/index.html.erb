@@ -1,0 +1,17 @@
+<h1>Your Bookings</h1>
+
+<div class="d-flex flex-wrap justify-content-evenly p-2 bd-highlight">
+  <% @my_bookings.each do |booking| %>
+    <div class="card" style="width: 18rem;">
+      <%= cl_image_tag booking.listing.photos.first.key, class: "card-img-top", height: 150, gravity: :auto %>
+      <div class="card-body">
+        <p class="card-text"><%= booking.listing.title %></p>
+        <p class="card-text"><%= booking.listing.description %></p>
+        <p class="card-text"><%= booking.date %></p>
+        <%= link_to "Cancel booking",
+            booking_path(booking),
+            data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
+      </div>
+    </div>
+  <% end %>
+</div>

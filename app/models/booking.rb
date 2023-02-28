@@ -1,7 +1,7 @@
 class Booking < ApplicationRecord
   belongs_to :user
   belongs_to :listing
-  belongs_to :review
+  has_many :reviews
 
   validates :date, :price, presence: true
 end

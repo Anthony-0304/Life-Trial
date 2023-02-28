@@ -2,7 +2,7 @@
 <div class="d-flex flex-wrap justify-content-evenly p-2 bd-highlight">
   <% @listings.each do |listing| %>
     <div class="card" style="width: 18rem;">
-      <%= cl_image_tag listing.photos.first.key, class: "card-img-top", height: 150, gravity: :auto %>
+      <%= cl_image_tag listing.photos.first.key, class: "card-img-top", height: 150, gravoty: :auto %>
       <div class="card-body">
         <p class="card-text"><%= link_to listing.title, listing_path(listing), class: "text-decoration-none" %></p>
       </div>
