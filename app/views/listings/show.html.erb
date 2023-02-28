@@ -5,6 +5,6 @@
     <h5 class="card-title"><%= @listing.title %></h5>
     <p class="card-text"><%= @listing.description %></p>
     <p class="card-text">£<%= @listing.price %></p>
-    <a href="#" class="btn btn-primary">Book!</a>
+    <%= link_to "Book!", new_listing_booking_path(@listing), class: "btn btn-primary" %>
   </div>
 </div>

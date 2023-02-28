@@ -1,0 +1,13 @@
+<h1>Bookings</h1>
+
+<h3>Listings</h3>
+<div class="d-flex flex-wrap justify-content-evenly p-2 bd-highlight">
+  <% @bookings.each do |booking| %>
+    <div class="card" style="width: 18rem;">
+      <%= cl_image_tag booking.listing.photo.first.key, class: "card-img-top", height: 150, gravity: :auto %>
+      <div class="card-body">
+        <p class="card-text"><%= booking.listing.title %></p>
+      </div>
+    </div>
+  <% end %>
+</div>
