@@ -90,6 +90,8 @@ listing_one = Listing.new(
 )
 listing_one.save!
 
+puts "#{user3.first_name} #{user3.last_name}: #{listing_one.title} created."
+
 listing_two = Listing.new(
   title: "A Day at Home with Henry VIII and the Royal Family",
   category: "Royalty",
@@ -98,6 +100,8 @@ listing_two = Listing.new(
   user_id: user3.id
 )
 listing_two.save!
+
+puts "#{user3.first_name} #{user3.last_name}: #{listing_two.title} created."
 
 puts "Creating LifeTrial listings for Neil Armstrong"
 
@@ -110,6 +114,8 @@ listing_three = Listing.new(
 )
 listing_three.save!
 
+puts "#{user4.first_name} #{user4.last_name}: #{listing_three.title} created."
+
 listing_four = Listing.new(
   title: "A Day at Home with Neil Armstrong and his Family",
   category: "Record Breakers",
@@ -118,6 +124,8 @@ listing_four = Listing.new(
   user_id: user4.id
 )
 listing_four.save!
+
+puts "#{user4.first_name} #{user4.last_name}: #{listing_four.title} created."
 
 puts "Creating LifeTrial listings for Christiano Ronaldo"
 
@@ -130,6 +138,8 @@ listing_five = Listing.new(
 )
 listing_five.save!
 
+puts "#{user5.first_name} #{user5.last_name}: #{listing_five.title} created."
+
 listing_six = Listing.new(
   title: "A Day at Home with Christiano Ronaldo and his Family",
   category: "Sports People",
@@ -138,6 +148,8 @@ listing_six = Listing.new(
   user_id: user5.id
 )
 listing_six.save!
+
+puts "#{user5.first_name} #{user5.last_name}: #{listing_six.title} created."
 
 puts "Creating LifeTrial listings for Marilyn Monroe"
 
@@ -150,6 +162,8 @@ listing_seven = Listing.new(
 )
 listing_seven.save!
 
+puts "#{user6.first_name} #{user6.last_name}: #{listing_seven.title} created."
+
 listing_eight = Listing.new(
   title: "A Day at Home with Marilyn Monroe and her Family",
   category: "Actors",
@@ -158,6 +172,8 @@ listing_eight = Listing.new(
   user_id: user6.id
 )
 listing_eight.save!
+
+puts "#{user6.first_name} #{user6.last_name}: #{listing_eight.title} created."
 
 puts "Creating LifeTrial listings for Dolly Parton"
 
@@ -170,6 +186,8 @@ listing_nine = Listing.new(
 )
 listing_nine.save!
 
+puts "#{user7.first_name} #{user7.last_name}: #{listing_nine.title} created."
+
 listing_ten = Listing.new(
   title: "A Day at Home with Dolly Parton and her Family",
   category: "Actors",
@@ -178,5 +196,7 @@ listing_ten = Listing.new(
   user_id: user7.id
 )
 listing_ten.save!
+
+puts "#{user7.first_name} #{user7.last_name}: #{listing_ten.title} created."
 
 puts 'Finished!'
