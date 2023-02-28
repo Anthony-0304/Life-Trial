@@ -1,7 +1,6 @@
 <h4>Search by category</h4>
 
   <%= simple_form_for :search, url: listings_path, method: "GET", html: { class: 'form-inline' } do |f| %>
-    <%# <%= f.input :category, input_html: {value: ""} %>
     <%= f.input :category, as: :select, collection: [
     'Actors & Actresses',
     'Musicians',
