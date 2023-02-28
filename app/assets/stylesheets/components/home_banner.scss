@@ -2,11 +2,12 @@
   width: 100%;
   background-image: url(experience.jpg);
   height: 405px;
-  background-color: purple;
+  background-color: lightblue;
   background-position: center;
   align-items: center;
   text-align: center;
   color: white;
+  background-repeat: no-repeat;
 }
 
 h1, p, {
@@ -16,5 +17,4 @@ h1, p, {
 .button {
   position: absolute;
   top: 50%;
-
 }
