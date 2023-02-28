@@ -6,7 +6,8 @@
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
 
-require 'faker'
+require "faker"
+require "open-uri"
 
 Booking.destroy_all
 Listing.destroy_all
@@ -98,6 +99,7 @@ listing_two = Listing.new(
   price: rand(1..10),
   description: "Come and be me for a day at home with the Royal Family.",
   user_id: user3.id
+
 )
 listing_two.save!
 
