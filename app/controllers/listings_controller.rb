@@ -1,4 +1,5 @@
 class ListingsController < ApplicationController
+  before_action :set_user, only: %i[new create]
 
   def index
     @listings = Listing.all
@@ -14,6 +15,7 @@ class ListingsController < ApplicationController
 
   def create
     @listing = Listing.new(listing_params)
+    @listing.user = @user
     if @listing.save
       redirect_to listing_path(@listing)
     else
@@ -23,7 +25,11 @@ class ListingsController < ApplicationController
 
   private
 
+  def set_user
+    @user = User.find(current_user.id)
+  end
+
   def listing_params
-    params.require(:listing).permit(:title, :category, :price, :description, :user_id, :photos)
+    params.require(:listing).permit(:title, :category, :price, :description, :user_id, :photos [])
   end
 end
