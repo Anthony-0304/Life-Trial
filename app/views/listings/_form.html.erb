@@ -1,14 +1,11 @@
 <%= simple_form_for(@listing) do |f| %>
   <%= f.input :title %>
   <%= f.input :category, as: :select, collection: [
-    'Comedy',
-    'Commoner',
-    'Film/TV',
-    'Influencer',
-    'Music',
-    'Politics',
+    'Actors & Actresses',
+    'Musicians',
+    'Record Breakers',
     'Royalty',
-    'Sport'
+    'Sports People'
     ], prompt: 'Select Category' %>
   <%= f.input :description %>
   <%= f.input :price %>
