@@ -4,10 +4,11 @@ class ListingsController < ApplicationController
   def index
     # The code below enables a filtered search
     # There is a listing class method to ensure that if search is nil, all Listings are displayed
+    # raise
     search = params[:search]
     if search.present?
       # @category = search["category"]
-      @listings = Listing.where(category: search)
+      @listings = Listing.where(category: search[:category])
     else
       @listings = Listing.all
     end
