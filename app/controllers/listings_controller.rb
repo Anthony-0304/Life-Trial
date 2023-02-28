@@ -2,7 +2,14 @@ class ListingsController < ApplicationController
   before_action :set_user, only: %i[new create]
 
   def index
-    @listings = Listing.all
+    # The code below enables a filtered search
+    # There is a listing class method to ensure that if search is nil, all Listings are displayed
+    search = params[:search]
+    if search.present?
+      @listings = Listing.where(category: search[:category])
+    else
+      @listings = Listing.all
+    end
   end
 
   def show
@@ -36,6 +43,6 @@ class ListingsController < ApplicationController
   end
 
   def listing_params
-    params.require(:listing).permit(:title, :category, :price, :description, :user_id, photos: [])
+    params.require(:listing).permit(:title, :category, :price, :description, :user_id, :search, photos: [])
   end
 end
