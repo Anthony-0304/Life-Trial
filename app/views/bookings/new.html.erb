@@ -1,5 +1,1 @@
-<%= simple_form_for [@listing, @booking] do |f| %>
-  <%= f.input :date, as: :date %>
-  <%= f.input :price %>
-  <%= f.submit "Book!", class: "btn btn-primary" %>
-<% end %>
+<%= render "bookings/form", listing: @listing, booking: @booking %>

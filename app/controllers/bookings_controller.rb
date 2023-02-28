@@ -1,8 +1,10 @@
 class BookingsController < ApplicationController
-  before_action :set_user, :set_listing
+  before_action :set_user, only: %i[new create]
+  before_action :set_listing, only: %i[new create]
 
   def index
     @bookings = Booking.all
+    @my_bookings = Booking.where(params[:user_id] == current_user.id)
   end
 
   def show
@@ -17,11 +19,18 @@ class BookingsController < ApplicationController
     @booking = Booking.new(booking_params)
     @booking.user = @user
     @booking.listing = @listing
+    @booking.price = @listing.price
     if @booking.save
-      redirect_to bookings_path(@booking)
+      redirect_to bookings_path
     else
       render :new, status: :unprocessable_entity
     end
+  end
+
+  def destroy
+    @booking = Booking.find(params[:id])
+    @booking.destroy
+    redirect_to bookings_path, status: :see_other
   end
 
   private
