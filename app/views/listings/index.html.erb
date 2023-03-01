@@ -9,7 +9,7 @@
     'Sports People'
     ],
     prompt: 'Select Category' %>
-    <%= f.submit "Search", class: "btn btn-primary" %>
+    <%= f.submit "Search", class: "button-search" %>
   <% end %>
 
 <br>
@@ -39,10 +39,12 @@
 <%# <div class="d-flex flex-wrap justify-content-evenly p-2 bd-highlight"> %>
 <div class="listings_display">
   <% @my_listings.each do |listing| %>
-    <div class="card" style="width: 18rem;">
+    <div class="card-design" style="width: 18rem;">
       <%= cl_image_tag listing.photos.first.key, class: "card-img-top", height: 150, gravoty: :auto %>
-      <div class="card-body">
-        <p class="card-text"><%= link_to listing.title, listing_path(listing), class: "text-decoration-none" %></p>
+      <div class="card-body-design">
+        <p class="card-text-design"><%= listing.title %></p>
+        <p class="card-text-design"><%= link_to "View", listing_path(listing), class: "button-design" %></p>
+
       </div>
     </div>
   <% end %>
