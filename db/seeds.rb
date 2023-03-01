@@ -17,10 +17,10 @@ User.destroy_all
 puts "Creating 7 users (2 Life Triallers, 5 Celebrities)."
 
 user1 = User.create!(
-  first_name: "Life",
-  last_name: "Trialler 1",
-  email: Faker::Internet.email,
-  password: Faker::Internet.password
+  first_name: "Rishi",
+  last_name: "Sunak",
+  email: 'rishi@test.com',
+  password: '123456'
 )
 
 puts "#{user1.first_name} #{user1.last_name} created."
@@ -28,8 +28,8 @@ puts "#{user1.first_name} #{user1.last_name} created."
 user2 = User.create(
   first_name: "Life",
   last_name: "Trialler 2",
-  email: Faker::Internet.email,
-  password: Faker::Internet.password
+  email: 'test2@test.com',
+  password: '123456'
 )
 
 puts "#{user2.first_name} #{user2.last_name} created."
@@ -38,7 +38,7 @@ user3 = User.create!(
   first_name: "Henry",
   last_name: "VIII",
   email: Faker::Internet.email,
-  password: Faker::Internet.password
+  password: '123456'
 )
 
 puts "#{user3.first_name} #{user3.last_name} created."
@@ -47,7 +47,7 @@ user4 = User.create!(
   first_name: "Neil",
   last_name: "Armstrong",
   email: Faker::Internet.email,
-  password: Faker::Internet.password
+  password: '123456'
 )
 
 puts "#{user4.first_name} #{user4.last_name} created."
@@ -56,7 +56,7 @@ user5 = User.create!(
   first_name: "Christiano",
   last_name: "Ronaldo",
   email: Faker::Internet.email,
-  password: Faker::Internet.password
+  password: '123456'
 )
 
 puts "#{user5.first_name} #{user5.last_name} created."
@@ -65,7 +65,7 @@ user6 = User.create!(
   first_name: "Marilyn",
   last_name: "Monroe",
   email: Faker::Internet.email,
-  password: Faker::Internet.password
+  password: '123456'
 )
 
 puts "#{user6.first_name} #{user6.last_name} created."
@@ -74,7 +74,7 @@ user7 = User.create!(
   first_name: "Dolly",
   last_name: "Parton",
   email: Faker::Internet.email,
-  password: Faker::Internet.password
+  password: '123456'
 )
 
 puts "#{user7.first_name} #{user7.last_name} created."
@@ -136,10 +136,10 @@ listing_four.save!
 
 puts "#{user4.first_name} #{user4.last_name}: #{listing_four.title} created."
 
-puts "Creating LifeTrial listings for Christiano Ronaldo"
+puts "Creating LifeTrial listings for Cristiano Ronaldo"
 
 listing_five = Listing.new(
-  title: "A day on the Football Pitch with Christiano Ronaldo",
+  title: "A day on the Football Pitch with Cristiano Ronaldo",
   category: "Sports People",
   price: rand(1..100),
   description: "Come and be me for a day on the football pitch.",
@@ -152,7 +152,7 @@ listing_five.save!
 puts "#{user5.first_name} #{user5.last_name}: #{listing_five.title} created."
 
 listing_six = Listing.new(
-  title: "A day at home with Christiano Ronaldo and his family",
+  title: "A day at home with Cristiano Ronaldo and his family",
   category: "Sports People",
   price: rand(1..100),
   description: "Come and be me for a day at home with the family.",

@@ -23,7 +23,7 @@
 <div class="listings_display">
   <% @listings.each do |listing| %>
     <div class="card-design" style="width: 18rem;">
-      <%= cl_image_tag listing.photos.first.key, class: "card-design-img-top", height: 150, gravoty: :auto %>
+      <%= cl_image_tag listing.photos.first.key, class: "card-design-img-top", height: 150, gravity: :auto %>
       <div class="card-body-design">
         <p class="card-text-design"><%=listing.title%></p>
         <p class="card-text-design">£<%=listing.price %></p>

@@ -4,6 +4,13 @@
   grid-gap: 12px;
 }
 
+.listings-show-image {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}
+
 @media(max-width: 992px) {
   .listings_display {
     grid-template-columns: 1fr 1fr;
