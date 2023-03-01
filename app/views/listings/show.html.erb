@@ -1,12 +1,27 @@
-<div class="card" style="width: 18rem;">
+<%# ORIGINAL CODE %>
+<%# <div class="card" style="width: 18rem;">
   <%= cl_image_tag @listing.photos.first.key, crop: :fill %>
-  <div class="card-body">
-    <h5 class="card-title"><%= @listing.title %></h5>
-    <p class="card-text"><%= @listing.description %></p>
-    <p class="card-text">£<%= @listing.price %></p>
-    <p class="card-link"><%= link_to "Book!", new_listing_booking_path(@listing) %></p>
-    <%= link_to "Cancel listing",
-            listing_path(@listing),
-            data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
-  </div>
+  <%# <div class="card-body"> %>
+    <%# <h5 class="card-title"><%= @listing.title %>
+    <%# <p class="card-text"><%= @listing.description %>
+    <%# <p class="card-text">£<%= @listing.price %>
+    <%# <p class="card-link"><%= link_to "Book!", new_listing_booking_path(@listing) %>
+    <%# <%= link_to "Cancel listing", %>
+            <%# listing_path(@listing), %>
+            <%# data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
+  <%# </div> %>
+<%# </div> %>
+
+<%# RJ CODE %>
+<div class="container">
+  <%= cl_image_tag @listing.photos.first.key, crop: :fill, :width => 600, :height => 400 %>
+  <h1><%= @listing.title %></h1>
+  <p><%= @listing.description %></p>
+  <p><%= @listing.price %></p>
+  <p class="card-link"><%= link_to "Book!", new_listing_booking_path(@listing) %></p>
+  <p>
+  <%= link_to "Cancel listing",
+    listing_path(@listing),
+    data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
+  </p>
 </div>
