@@ -13,14 +13,16 @@
   <% end %>
 
 <br>
-<h3>Listings</h3>
+<h3 class="listings-heading">Listings</h3>
 
 <div class="d-flex flex-wrap justify-content-evenly p-2 bd-highlight">
   <% @listings.each do |listing| %>
-    <div class="card" style="width: 18rem;">
-      <%= cl_image_tag listing.photos.first.key, class: "card-img-top", height: 150, gravoty: :auto %>
-      <div class="card-body">
-        <p class="card-text"><%= link_to listing.title, listing_path(listing), class: "text-decoration-none" %></p>
+    <div class="card-design" style="width: 18rem;">
+      <%= cl_image_tag listing.photos.first.key, class: "card-design-img-top", height: 150, gravoty: :auto %>
+      <div class="card-body-design">
+        <p class="card-text-design"><%=listing.title%></p>
+        <p class="card-text-design">£<%=listing.price %></p>
+        <p class="card-text-design"><%= link_to "Trial my life", listing_path(listing), class: "button-design" %></p>
       </div>
     </div>
   <% end %>
