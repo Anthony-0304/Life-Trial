@@ -1,5 +1,7 @@
-<h1>Your Bookings</h1>
-
+<h1>Your Bookings Page</h1>
+  <% if @my_bookings.empty? %>
+    <h5>You haven't made any bookings yet 😭</h5>
+  <% end %>
 <%# <div class="d-flex flex-wrap justify-content-evenly p-2 bd-highlight"> %>
 <div class="listings_display">
   <% @my_bookings.each do |booking| %>
