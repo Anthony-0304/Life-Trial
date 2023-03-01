@@ -34,7 +34,9 @@
 </div>
 
 <hr>
-<h3>My Listings</h3>
+<% if @listings.present? %>
+  <h3>My Listings</h3>
+<% end %>
 
 <%# <div class="d-flex flex-wrap justify-content-evenly p-2 bd-highlight"> %>
 <div class="listings_display">

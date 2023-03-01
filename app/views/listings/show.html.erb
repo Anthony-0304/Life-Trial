@@ -17,8 +17,8 @@
   <div class="listings-show-image"><%= cl_image_tag @listing.photos.first.key, crop: :fill, :width => 600, :height => 400 %></div>
   <h1><%= @listing.title %></h1>
   <p><%= @listing.description %></p>
-  <p><%= @listing.price %></p>
-  <p class="card-link"><%= link_to "Book!", new_listing_booking_path(@listing) %></p>
+  <p>£<%= @listing.price %></p>
+  <p><%= link_to "Book!", new_listing_booking_path(@listing), class: "button-search text-decoration-none" %></p>
   <p>
     <% if @listing.user == current_user %>
       <%= link_to "Cancel listing",
