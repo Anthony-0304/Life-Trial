@@ -1,9 +1,9 @@
 <h1>Your Bookings Page</h1>
-
-<div class="d-flex flex-wrap justify-content-evenly p-2 bd-highlight">
   <% if @my_bookings.empty? %>
     <h5>You haven't made any bookings yet 😭</h5>
   <% end %>
+<%# <div class="d-flex flex-wrap justify-content-evenly p-2 bd-highlight"> %>
+<div class="listings_display">
   <% @my_bookings.each do |booking| %>
     <div class="card" style="width: 18rem;">
       <%= cl_image_tag booking.listing.photos.first.key, class: "card-img-top", height: 150, gravity: :auto %>
@@ -18,3 +18,4 @@
     </div>
   <% end %>
 </div>
+<%# </div> %>
