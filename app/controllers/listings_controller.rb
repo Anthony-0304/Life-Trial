@@ -1,15 +1,18 @@
 class ListingsController < ApplicationController
-  before_action :set_user, only: %i[new create]
+  before_action :set_user, only: %i[new create show]
 
   def index
     # The code below enables a filtered search
     # There is a listing class method to ensure that if search is nil, all Listings are displayed
     search = params[:search]
     if search.present?
+      @title = "Search results for: #{search[:category]}"
       @listings = Listing.where(category: search[:category])
     else
+      @title = "All listings"
       @listings = Listing.all
     end
+    @my_listings = Listing.where(user_id: current_user.id)
   end
 
   def show
