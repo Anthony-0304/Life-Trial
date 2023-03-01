@@ -20,8 +20,10 @@
   <p><%= @listing.price %></p>
   <p class="card-link"><%= link_to "Book!", new_listing_booking_path(@listing) %></p>
   <p>
-  <%= link_to "Cancel listing",
-    listing_path(@listing),
-    data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
+    <% if @listing.user == current_user %>
+      <%= link_to "Cancel listing",
+              listing_path(@listing),
+              data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
+    <% end %>
   </p>
 </div>

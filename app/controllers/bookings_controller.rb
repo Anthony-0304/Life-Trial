@@ -1,10 +1,10 @@
 class BookingsController < ApplicationController
-  before_action :set_user, only: %i[new create]
+  before_action :set_user, only: %i[new create index]
   before_action :set_listing, only: %i[new create]
 
   def index
     @bookings = Booking.all
-    @my_bookings = Booking.where(params[:user_id] == current_user.id)
+    @my_bookings = Booking.where(user_id: current_user.id)
   end
 
   def show

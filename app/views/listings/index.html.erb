@@ -13,11 +13,32 @@
   <% end %>
 
 <br>
-<h3>Listings</h3>
+
+<h3><%= @title %></h3>
+<% if @listings.empty? %>
+  <p class="text-start"> There are no results for your search 💔 </p>
+<% end %>
 
 <%# <div class="d-flex flex-wrap justify-content-evenly p-2 bd-highlight"> %>
 <div class="listings_display">
   <% @listings.each do |listing| %>
+    <div class="card-design" style="width: 18rem;">
+      <%= cl_image_tag listing.photos.first.key, class: "card-design-img-top", height: 150, gravoty: :auto %>
+      <div class="card-body-design">
+        <p class="card-text-design"><%=listing.title%></p>
+        <p class="card-text-design">£<%=listing.price %></p>
+        <p class="card-text-design"><%= link_to "Trial my life", listing_path(listing), class: "button-design" %></p>
+      </div>
+    </div>
+  <% end %>
+</div>
+
+<hr>
+<h3>My Listings</h3>
+
+<%# <div class="d-flex flex-wrap justify-content-evenly p-2 bd-highlight"> %>
+<div class="listings_display">
+  <% @my_listings.each do |listing| %>
     <div class="card" style="width: 18rem;">
       <%= cl_image_tag listing.photos.first.key, class: "card-img-top", height: 150, gravoty: :auto %>
       <div class="card-body">
@@ -26,4 +47,3 @@
     </div>
   <% end %>
 </div>
-<%# </div> %>
