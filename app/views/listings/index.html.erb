@@ -15,7 +15,8 @@
 <br>
 <h3>Listings</h3>
 
-<div class="d-flex flex-wrap justify-content-evenly p-2 bd-highlight">
+<%# <div class="d-flex flex-wrap justify-content-evenly p-2 bd-highlight"> %>
+<div class="listings_display">
   <% @listings.each do |listing| %>
     <div class="card" style="width: 18rem;">
       <%= cl_image_tag listing.photos.first.key, class: "card-img-top", height: 150, gravoty: :auto %>
@@ -25,3 +26,4 @@
     </div>
   <% end %>
 </div>
+<%# </div> %>
