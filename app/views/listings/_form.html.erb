@@ -12,9 +12,9 @@
   <%= f.input :price %>
   <%= f.input :photos, as: :file, input_html: { multiple: true } %>
   <%= f.submit "Add LifeTrial", class: "button-design"%>
+  <%= link_to listings_path do %>
+    <div class="secondary-button">
+    <i class="fa-solid fa-trash"></i>
+    </div>
+  <% end %>
 <% end %>
-
-<%= link_to listings_path do %>
-  <div class="secondary-button">
-    <i class="fa-solid fa-backward"></i>
-  </div>

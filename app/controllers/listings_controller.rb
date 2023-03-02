@@ -1,4 +1,5 @@
 class ListingsController < ApplicationController
+  skip_before_action :authenticate_user!, only: :index
   before_action :set_user, only: %i[new create show]
 
   def index
@@ -12,7 +13,7 @@ class ListingsController < ApplicationController
       @title = "A Day in the Life of..."
       @listings = Listing.all
     end
-    @my_listings = Listing.where(user_id: current_user.id)
+    @my_listings = Listing.where(user_id: current_user.id) if user_signed_in?
   end
 
   def show
