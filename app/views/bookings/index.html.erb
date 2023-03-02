@@ -1,28 +1,30 @@
-<h1>Your Bookings Page</h1>
-  <% if @my_bookings.empty? %>
-    <h5>You haven't made any bookings yet 😭</h5>
-  <% end %>
-<%# <div class="d-flex flex-wrap justify-content-evenly p-2 bd-highlight"> %>
-<div class="listings_display">
-  <% @my_bookings.each do |booking| %>
-    <div class="card-design" style="width: 18rem;">
-      <%= cl_image_tag booking.listing.photos.first.key, class: "card-img-top", height: 150, gravity: :auto %>
-      <div class="card-body-design">
-        <p class="card-text-design"><strong><%= booking.listing.title %></strong></p>
-        <p class="card-text-design"><%= booking.listing.description %></p>
-        <p class="card-text-design"><%= booking.date %></p>
-        <p class="card-text-design text-decoration-none"><%= link_to "Cancel booking",
-            booking_path(booking),
-            data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %></p>
+<div class="container">
+  <h1>Your Bookings Page</h1>
+    <% if @my_bookings.empty? %>
+      <h5>You haven't made any bookings yet 😭</h5>
+    <% end %>
+  <%# <div class="d-flex flex-wrap justify-content-evenly p-2 bd-highlight"> %>
+  <div class="listings_display">
+    <% @my_bookings.each do |booking| %>
+      <div class="card-design" style="width: 18rem;">
+        <%= cl_image_tag booking.listing.photos.first.key, class: "card-img-top", height: 150, gravity: :auto %>
+        <div class="card-body-design">
+          <p class="card-text-design"><strong><%= booking.listing.title %></strong></p>
+          <p class="card-text-design"><%= booking.listing.description %></p>
+          <p class="card-text-design"><%= booking.date %></p>
+          <p class="card-text-design text-decoration-none"><%= link_to "Cancel booking",
+              booking_path(booking),
+              data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %></p>
+        </div>
       </div>
+    <% end %>
+
+  <%= link_to listings_path do %>
+    <div class="secondary-button">
+      <i class="fa-solid fa-backward"></i>
     </div>
   <% end %>
 
-<%= link_to listings_path do %>
-  <div class="secondary-button">
-    <i class="fa-solid fa-backward"></i>
   </div>
-<% end %>
-
+  <%# </div> %>
 </div>
-<%# </div> %>
