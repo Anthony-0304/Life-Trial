@@ -8,14 +8,51 @@
 }
 
 
-// .form-control, .form-d-flex, .btn_btn-primary {
-//   position: absolute;
-//   z-index:9999999;
+.form-control{
+  position: relative; left: 0px;
+  z-index:9999999;
+  align-items: center;
+  text-align: center;
+  width: 30%;
+  top: 0px;
+  bottom:auto;
+}
+// .form-select {
+//   // position: relative;
+//   right: 0px;
+//   // z-index:9999999;
 //   align-items: center;
 //   text-align: center;
 //   width: 30%;
-//   top: 350px;
-//   bottom:auto;}
+//   top: 0px;
+//   justify-content: right;
+//   margin: 15px;
+//   float: right;
+//   top: -40px;
+// }
+
+.form-select {
+position: relative;
+width: 30%;
+margin-top: -80px;
+float: right;
+right: -100px;
+top: 0px;
+}
+
+.form-label, h5 {
+ position: relative; float: right;
+ z-index:9999999;
+}
+
+.button-design-search {
+position: relative;
+width: 30%;
+margin-top: -80px;
+float: right;
+right: -100px;
+top: 50px;
+}
 
 .notice {
   margin: 0%;
