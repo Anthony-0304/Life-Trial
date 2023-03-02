@@ -1,3 +1,14 @@
+<h4>Search by keyword</h4>
+
+<%= form_with url: listings_path, method: :get, class: "d-flex" do %>
+  <%= text_field_tag :query,
+    params[:query],
+    class: "form-control",
+    placeholder: "Search Listings"
+  %>
+  <%= submit_tag "Search", class: "btn btn-primary" %>
+<% end %>
+
 <h4>Search by category</h4>
 
   <%= simple_form_for :search, url: listings_path, method: "GET", html: { class: 'form-inline' } do |f| %>
@@ -40,7 +51,6 @@
     <hr>
     <h3>My Listings</h3>
   <% end %>
-<% end %>
 
 <%# <div class="d-flex flex-wrap justify-content-evenly p-2 bd-highlight"> %>
 
@@ -54,9 +64,10 @@
           <p class="card-text-design"><%= link_to "View", listing_path(listing), class: "button-design" %></p>
         </div>
       </div>
+     <% end %>
     <% end %>
-  <% end %>
-</div>
+  </div>
+<% end %>
 
 <%= link_to listings_path do %>
   <div class="secondary-button">
