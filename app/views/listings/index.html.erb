@@ -1,29 +1,38 @@
 <%= render "shared/navbar"%>
 <div class="container">
-  <h4>Search by keyword</h4>
-
-  <%= form_with url: listings_path, method: :get, class: "d-flex" do %>
-    <%= text_field_tag :query,
-      params[:query],
-      class: "form-control",
-      placeholder: "Search Listings"
-    %>
-    <%= submit_tag "Search", class: "btn btn-primary" %>
-  <% end %>
-
-  <h4>Search by category</h4>
-
-    <%= simple_form_for :search, url: listings_path, method: "GET", html: { class: 'form-inline' } do |f| %>
-      <%= f.input :category, as: :select, collection: [
-      'Actors & Actresses',
-      'Musicians',
-      'Record Breakers',
-      'Royalty',
-      'Sports People'
-      ],
-      prompt: 'Select Category' %>
-      <%= f.submit "Search", class: "button-design" %>
-    <% end %>
+<div class="d-flex bd-highlight p-4">
+  <div class="p-2 flex-fill bd-highlight">
+    <h4>Search by keyword</h4>
+    <div class="d-flex flex-column">
+      <%= form_with url: listings_path, method: :get do %>
+        <%= text_field_tag :query,
+          params[:query],
+          class: "form-control",
+          placeholder: "Search Listings"
+        %>
+        <%= submit_tag "Search", class: "button-design" %>
+      <% end %>
+    </div>
+  </div>
+  <div class="p-2 flex-fill bd-highlight">
+    <h4>Search by category</h4>
+    <div class="d-flex flex-column">
+      <div>
+        <%= simple_form_for :search, url: listings_path, method: "GET", html: { class: 'form-inline' } do |f| %>
+          <%= f.input :category, as: :select, label: false, collection: [
+          'Actors & Actresses',
+          'Musicians',
+          'Record Breakers',
+          'Royalty',
+          'Sports People'
+          ],
+          prompt: 'Filter by category' %>
+          <%= f.submit "Search", class: "button-design" %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
 
   <br>
 
