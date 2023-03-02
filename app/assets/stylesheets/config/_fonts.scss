@@ -1,8 +1,17 @@
 // Import Google fonts
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,200;1,300&family=Nanum+Gothic&family=Poppins:wght@500&family=Roboto:wght@300;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@400;500&display=swap');
 // Define fonts for body and headers
-$body-font: "Montserrat", "Regular", "sans-serif";
-$headers-font: "Montserrat", "Bold", "sans-serif";
+$body-font: "Raleway", "Regular", "sans-serif";
+$headers-font: "Raleway", "Bold", "sans-serif";
+
+h1, h2, h3, h4, p, a {
+  color: #14213D;
+  // font-weight: bold;
+}
+
+a:hover {
+  color: #14213D;
+}
 
 // To use a font file (.woff) uncomment following lines
 // @font-face {

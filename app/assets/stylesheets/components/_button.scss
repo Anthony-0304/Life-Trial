@@ -18,6 +18,12 @@
 
 }
 
+.button-design:hover {
+  a {
+    color: #14213D;
+  }
+}
+
 .secondary-button {
   background-color: #FCA311;
   display: inline-block;
@@ -35,4 +41,10 @@
   font-weight: 500;
   border-radius: 24px;
   letter-spacing: 2px;
+}
+
+.secondary-button:hover {
+  i {
+    color: #14213D;
+  }
 }
