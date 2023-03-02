@@ -1,4 +1,5 @@
 class ListingsController < ApplicationController
+  skip_before_action :authenticate_user!, only: :index
   before_action :set_user, only: %i[new create show]
   before_action :set_booking, only: %i[show]
 
@@ -7,13 +8,13 @@ class ListingsController < ApplicationController
     # There is a listing class method to ensure that if search is nil, all Listings are displayed
     search = params[:search]
     if search.present?
-      @title = "Search results for: #{search[:category]}"
+      @title = "A Day in the Life results for: #{search[:category]}"
       @listings = Listing.where(category: search[:category])
     else
-      @title = "All listings"
+      @title = "A Day in the Life of..."
       @listings = Listing.all
     end
-    @my_listings = Listing.where(user_id: current_user.id)
+    @my_listings = Listing.where(user_id: current_user.id) if user_signed_in?
   end
 
   def show

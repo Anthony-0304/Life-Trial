@@ -83,7 +83,7 @@ puts "#{user7.first_name} #{user7.last_name} created."
 puts "Creating LifeTrial listings for Henry VIII"
 
 listing_one = Listing.new(
-  title: "A day on the Throne with Henry VIII",
+  title: "HENRY VIII: ON THE THRONE",
   category: "Royalty",
   price: rand(1..100),
   description: "Come and be me for a day on the throne.",
@@ -96,7 +96,7 @@ listing_one.save!
 puts "#{user3.first_name} #{user3.last_name}: #{listing_one.title} created."
 
 listing_two = Listing.new(
-  title: "A day at home with Henry VIII and his six wives",
+  title: "HENRY VIII: AT HOME WITH HIS 6 WIVES",
   category: "Royalty",
   price: rand(1..100),
   description: "Come and be me for a day at home with my six wives.",
@@ -111,7 +111,7 @@ puts "#{user3.first_name} #{user3.last_name}: #{listing_two.title} created."
 puts "Creating LifeTrial listings for Neil Armstrong"
 
 listing_three = Listing.new(
-  title: "A day on the Moon with Neil Armstrong",
+  title: "NEIL ARMSTRONG: ON THE MOON",
   category: "Record Breakers",
   price: rand(1..100),
   description: "Come and be me for a day on the moon.",
@@ -124,7 +124,7 @@ listing_three.save!
 puts "#{user4.first_name} #{user4.last_name}: #{listing_three.title} created."
 
 listing_four = Listing.new(
-  title: "A day at home with Neil Armstrong and his family",
+  title: "NEIL ARMSTRONG: AT HOME WITH HIS FAMILY",
   category: "Record Breakers",
   price: rand(1..100),
   description: "Come and be me for a day at home with the family.",
@@ -139,7 +139,7 @@ puts "#{user4.first_name} #{user4.last_name}: #{listing_four.title} created."
 puts "Creating LifeTrial listings for Cristiano Ronaldo"
 
 listing_five = Listing.new(
-  title: "A day on the Football Pitch with Cristiano Ronaldo",
+  title: "CRISTIANO RONALDO: ON THE FOOTBALL PITCH",
   category: "Sports People",
   price: rand(1..100),
   description: "Come and be me for a day on the football pitch.",
@@ -152,7 +152,7 @@ listing_five.save!
 puts "#{user5.first_name} #{user5.last_name}: #{listing_five.title} created."
 
 listing_six = Listing.new(
-  title: "A day at home with Cristiano Ronaldo and his family",
+  title: "CRISTIANO RONALDO: AT HOME WITH HIS FAMILY",
   category: "Sports People",
   price: rand(1..100),
   description: "Come and be me for a day at home with the family.",
@@ -167,7 +167,7 @@ puts "#{user5.first_name} #{user5.last_name}: #{listing_six.title} created."
 puts "Creating LifeTrial listings for Marilyn Monroe"
 
 listing_seven = Listing.new(
-  title: "A day on the Hollywood Film Set with Marilyn Monroe",
+  title: "MARILYN MONROE: ON A HOLLYWOOD FILM SET",
   category: "Actors & Actresses",
   price: rand(1..100),
   description: "Come and be me for a day on the film set. I wake up early, eat breakfast with my cats, then have my make-up and hair done - red lips and trademark platinum curls, before arriving on the film set to shoot my latest Hollywood movie. After the morning's filming, I'd go for lunch at my favourite 5* restaurant in Los Angeles, and end the day with a relaxing spa treatment.",
@@ -180,7 +180,7 @@ listing_seven.save!
 puts "#{user6.first_name} #{user6.last_name}: #{listing_seven.title} created."
 
 listing_eight = Listing.new(
-  title: "A day at home with Marilyn Monroe and her family",
+  title: "MARILYN MONROE: AT HOME WITH HER FAMILY",
   category: "Actors & Actresses",
   price: rand(1..100),
   description: "Come and be me for a day at home with the family.",
@@ -195,7 +195,7 @@ puts "#{user6.first_name} #{user6.last_name}: #{listing_eight.title} created."
 puts "Creating LifeTrial listings for Dolly Parton"
 
 listing_nine = Listing.new(
-  title: "A '9-5' day in the Recording Studio with Dolly Parton",
+  title: "DOLLY PARTON: A '9-5' DAY IN THE RECORDING STUDIO",
   category: "Musicians",
   price: rand(1..100),
   description: "Come and be me for a day in the recording studio. I usually work '9 to 5' and start the day with breakfast at my favourite Nashville coffee shop, before my chauffeur picks me up to take me to the recording studio. I'd get in the zone by singing a version of 'Jolene' and spend the day jamming out with all my studio musicians. I'd head on to my favourite restaurant and spend the rest of the evening dancing in a country music bar.",
@@ -208,10 +208,10 @@ listing_nine.save!
 puts "#{user7.first_name} #{user7.last_name}: #{listing_nine.title} created."
 
 listing_ten = Listing.new(
-  title: "A day at home with Dolly Parton and her family",
+  title: "DOLLY PARTON: AT HOME WITH CARL THOMAS DEAN",
   category: "Musicians",
   price: rand(1..100),
-  description: "Come and be me for a day at home with the family.",
+  description: "Come and be me for a day at home with my husband of over 50 years!",
   user_id: user7.id
 )
 file_ten = URI.open("https://images.squarespace-cdn.com/content/v1/5a77442b29f187714050c37c/1536711590158-WGGIU8539D3VA6U8E8VB/Young-Dolly-Parton+copy.jpg?format=1500w")
