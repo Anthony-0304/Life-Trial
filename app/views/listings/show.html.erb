@@ -1,7 +1,12 @@
 <%= render "shared/navbar"%>
 <div class="container">
   <div class="custom-container">
-        <h1><%= @listing.title %></h1>
+    <%= link_to listings_path do %>
+      <div class="secondary-button">
+        <i class="fa-solid fa-arrow-left"></i>
+      </div>
+    <% end %>
+    <h1><%= @listing.title %></h1>
     <div class="d-flex flex-row justify-content-between">
       <div class="d-flex p-2 bd-highlight w-50">
         <%= cl_image_tag @listing.photos.first.key, class: "listings-show-image", gravity: :face %>
@@ -11,7 +16,7 @@
           <p class="text-start"><strong>Host: </strong><%= @listing.user.first_name %> <%= @listing.user.last_name %></p>
           <p class="text-start"><strong>Details: </strong><%= @listing.description %></p>
           <%# <p class="text-start"><strong>Location: </strong><%= @listing.city %></p>
-          <p class="text-start"><strong>Price: </strong>£<%= @listing.price %></p>
+          <p class="text-start"><strong>Price: </strong>£<%= @listing.price %>0</p>
           <p>
             <% if @listing.user == current_user %>
               <%= link_to "Cancel listing",
@@ -24,11 +29,6 @@
         </div>
       </div>
     </div>
-  <%= link_to listings_path do %>
-    <div class="secondary-button">
-      <i class="fa-solid fa-backward"></i>
-    </div>
-  <% end %>
   </div>
 </div>
 <div class="fixed-bottom">

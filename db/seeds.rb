@@ -83,7 +83,7 @@ puts "#{user7.first_name} #{user7.last_name} created."
 puts "Creating LifeTrial listings for Henry VIII"
 
 listing_one = Listing.new(
-  title: "HENRY VIII: ON THE THRONE",
+  title: "HENRY VIII: ON THE THRONE RULING THE COUNTRY",
   category: "Royalty",
   price: rand(1..100),
   description: "Come and be me for a day on the throne.",
