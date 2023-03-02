@@ -39,17 +39,21 @@
 <% end %>
 
 <%# <div class="d-flex flex-wrap justify-content-evenly p-2 bd-highlight"> %>
+
 <div class="listings_display">
   <% @my_listings.each do |listing| %>
-    <div class="card-design" style="width: 18rem;">
-      <%= cl_image_tag listing.photos.first.key, class: "card-img-top", height: 150, gravoty: :auto %>
-      <div class="card-body-design">
-        <p class="card-text-design"><%= listing.title %></p>
-        <p class="card-text-design"><%= link_to "View", listing_path(listing), class: "button-design" %></p>
-
+    <%= link_to listing_path(listing) do %>
+      <div class="card-design" style="width: 18rem;" >
+        <%= cl_image_tag listing.photos.first.key, class: "card-img-top", height: 150, gravoty: :auto %>
+        <div class="card-body-design">
+          <p class="card-text-design"><%= listing.title %></p>
+          <p class="card-text-design"><%= link_to "View", listing_path(listing), class: "button-design" %></p>
+        </div>
       </div>
-    </div>
+    <% end %>
   <% end %>
+</div>
+
 
 
 <%= link_to listings_path do %>
@@ -57,5 +61,3 @@
     <i class="fa-solid fa-backward"></i>
   </div>
 <% end %>
-
-</div>
