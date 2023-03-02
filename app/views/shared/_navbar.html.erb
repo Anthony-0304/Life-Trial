@@ -1,4 +1,4 @@
-<div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
+<div class="navbar sticky-top navbar-expand-sm navbar-light navbar-lewagon">
   <div class="container-fluid">
     <%= link_to "#", class: "navbar-brand" do %>
       <%= image_tag "https://res.cloudinary.com/daiq2cytf/image/upload/v1677682678/Screenshot_2023-03-01_at_14.52.11_kfkg4f.png" %>
@@ -25,6 +25,7 @@
            <%= current_user.first_name.capitalize %>
             </a>
             <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+              <%= link_to "My listings", listings_path, class: "dropdown-item" %>
               <%= link_to "My bookings", bookings_path, class: "dropdown-item" %>
               <%= link_to "Log out", destroy_user_session_path, data: {turbo_method: :delete}, class: "dropdown-item" %>
             </div>
