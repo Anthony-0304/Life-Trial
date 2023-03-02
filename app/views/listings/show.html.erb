@@ -8,7 +8,7 @@
       <div class="p-2 bd-highlight">
         <p class="text-start"><strong>Host: </strong><%= @listing.user.first_name %> <%= @listing.user.last_name %></p>
         <p class="text-start"><strong>Details: </strong><%= @listing.description %></p>
-        <p class="text-start"><strong>Location: </strong><%= @listing.city %></p>
+        <%# <p class="text-start"><strong>Location: </strong><%= @listing.city %></p>
         <p class="text-start"><strong>Price: </strong>£<%= @listing.price %></p>
         <p>
           <% if @listing.user == current_user %>
