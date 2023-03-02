@@ -9,7 +9,7 @@
         <p class="text-start"><strong>Host: </strong><%= @listing.user.first_name %> <%= @listing.user.last_name %></p>
         <p class="text-start"><strong>Details: </strong><%= @listing.description %></p>
         <%# <p class="text-start"><strong>Location: </strong><%= @listing.city %></p>
-        <p class="text-start"><strong>Price: </strong>£<%= @listing.price %></p>
+        <p class="text-start"><strong>Price: </strong>£<%= @listing.price %>0</p>
         <p>
           <% if @listing.user == current_user %>
             <%= link_to "Cancel listing",

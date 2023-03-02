@@ -14,7 +14,7 @@ class ListingsController < ApplicationController
       @title = "A Day in the Life of..."
       @listings = Listing.all
     end
-    
+
     if params[:query].present?
       sql_query = <<~SQL
         listings.title @@ :query
