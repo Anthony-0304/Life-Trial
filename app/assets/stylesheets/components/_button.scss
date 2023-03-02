@@ -2,6 +2,7 @@
   background-color: #FCA311;
   display: inline-block;
   border: 1px solid transparent;
+  box-shadow: 0 0.25px 0.25px 0 #14213D;
   color: white;
   padding: 15px 32px;
   cursor: pointer;
@@ -24,6 +25,7 @@
     color: #14213D;
   }
 }
+
 
 .secondary-button {
   background-color: #E5E5E5;
