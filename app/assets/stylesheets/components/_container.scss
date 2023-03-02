@@ -1,0 +1,20 @@
+@mixin make-container($padding-x: $container-padding-x) {
+  width: 100%;
+  padding-right: $padding-x;
+  padding-left: $padding-x;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+// Usage
+.custom-container {
+  @include make-container();
+}
+
+.booking-form {
+  background-color: #14213D;
+  color: #E5E5E5;
+  border-radius: 8px;
+  box-shadow: 1px 1px 4px;
+  padding: 10px;
+}
