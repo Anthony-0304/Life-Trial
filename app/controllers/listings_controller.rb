@@ -12,6 +12,15 @@ class ListingsController < ApplicationController
       @title = "All listings"
       @listings = Listing.all
     end
+    if params[:query].present?
+      sql_query = <<~SQL
+        listings.title @@ :query
+        OR listings.description @@ :query
+      SQL
+      @listings = Listing.joins(:user).where(sql_query, query: "%#{params[:query]}%")
+    else
+      @listings = Listing.all
+    end
     @my_listings = Listing.where(user_id: current_user.id)
   end
 
