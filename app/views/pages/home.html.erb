@@ -1,20 +1,28 @@
-<%= render "shared/navbar"%>
-<h1><center>LifeTrial<center></h1>
-<h4>Experience a day in someone else's life</h4>
-
-<div id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel">
-  <div class="carousel-inner">
-  <div class="carousel-item active" data-bs-interval="2000">
-      <img src="https://www.mashed.com/img/gallery/the-first-astronaut-to-bring-chocolate-into-space/l-intro-1666923799.jpg" class="image-carousel">
-    </div>
-    <div class="carousel-item">
-      <img src="https://e0.365dm.com/22/07/2048x1152/skysports-cristiano-ronaldo_5823297.jpg"class="image-carousel">
-    </div>
-    <div class="carousel-item">
-      <img src="https://www.history.com/.image/ar_16:9%2Cc_fill%2Ccs_srgb%2Cfl_progressive%2Cq_auto:good%2Cw_1200/MTY1ODkxNzE2MjEyMDczNTM5/tdih-marilyn-monroe-gettyimages-53376357.jpg"class="image-carousel">
-    </div>
-    <div class="carousel-item">
-      <img src="https://www.slashfilm.com/img/gallery/brad-pitt-isnt-exactly-proud-of-his-performance-in-troy/l-intro-1654727045.jpg"class="image-carousel">
+<%# <%= render "shared/navbar"%>
+<div>
+  <div class="home-title">
+    <h1 style="color: white; font-size: 72px; font-weight: bold">LifeTrial</h1>
+    <h4 style="color: white">Experience a day in someone else's life.</h4>
+    <%= link_to "Start browsing", listings_path, class: "button-design" %>
+  </div>
+  <div class="home-carousel">
+    <div id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel">
+      <div class="carousel-inner">
+        <div class="carousel-item active" data-bs-interval="1000">
+          <img src="https://www.mashed.com/img/gallery/the-first-astronaut-to-bring-chocolate-into-space/l-intro-1666923799.jpg" class="image-carousel">
+          <div class="carousel-caption">
+          </div>
+        </div>
+        <div class="carousel-item">
+          <img src="https://e0.365dm.com/22/07/2048x1152/skysports-cristiano-ronaldo_5823297.jpg"class="image-carousel">
+        </div>
+        <div class="carousel-item">
+          <img src="https://www.history.com/.image/ar_16:9%2Cc_fill%2Ccs_srgb%2Cfl_progressive%2Cq_auto:good%2Cw_1200/MTY1ODkxNzE2MjEyMDczNTM5/tdih-marilyn-monroe-gettyimages-53376357.jpg"class="image-carousel">
+        </div>
+        <div class="carousel-item">
+          <img src="https://www.slashfilm.com/img/gallery/brad-pitt-isnt-exactly-proud-of-his-performance-in-troy/l-intro-1654727045.jpg"class="image-carousel">
+        </div>
+      </div>
     </div>
   </div>
 </div>

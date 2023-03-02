@@ -25,3 +25,20 @@
   text-align: center;
   z-index: 2;
   }
+
+.home-title {
+  color: white;
+  text-align: center;
+  background: rgba(0, 0, 0, 0.2);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 12px;
+  padding: 20px;
+}
+
+.home-carousel {
+  position: relative;
+  z-index: -1;
+}
