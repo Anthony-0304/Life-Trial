@@ -1,6 +1,7 @@
 class ListingsController < ApplicationController
   skip_before_action :authenticate_user!, only: :index
   before_action :set_user, only: %i[new create show]
+  before_action :set_booking, only: %i[show]
 
   def index
     # The code below enables a filtered search
@@ -44,6 +45,10 @@ class ListingsController < ApplicationController
 
   def set_user
     @user = User.find(current_user.id)
+  end
+
+  def set_booking
+    @booking = Booking.new
   end
 
   def listing_params

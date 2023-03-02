@@ -1,6 +1,6 @@
 class BookingsController < ApplicationController
   before_action :set_user, only: %i[new create index]
-  before_action :set_listing, only: %i[new create]
+  before_action :set_listing, only: %i[new create show]
 
   def index
     @bookings = Booking.all
@@ -23,7 +23,7 @@ class BookingsController < ApplicationController
     if @booking.save
       redirect_to bookings_path
     else
-      render :new, status: :unprocessable_entity
+      render "listings/show", status: :unprocessable_entity
     end
   end
 
