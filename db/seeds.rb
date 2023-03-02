@@ -83,13 +83,13 @@ puts "#{user7.first_name} #{user7.last_name} created."
 puts "Creating LifeTrial listings for Henry VIII"
 
 listing_one = Listing.new(
-  title: "HENRY VIII: ON THE THRONE",
+  title: "HENRY VIII: ON THE THRONE RULING THE COUNTRY",
   category: "Royalty",
   price: rand(1..100),
   description: "Come and be me for a day on the throne.",
   user_id: user3.id
 )
-file_one = URI.open("https://www.discoverbritainmag.com/wp-content/uploads/2017/08/CROP-HENRY.jpg")
+file_one = URI.open("https://cdn.creatureandcoagency.com/uploads/2017/06/Henry-VIII-facts-10.jpg")
 listing_one.photos.attach(io: file_one, filename: "#{file_one}.png", content_type: "image/png")
 listing_one.save!
 
@@ -158,7 +158,7 @@ listing_six = Listing.new(
   description: "Come and be me for a day at home with the family.",
   user_id: user5.id
 )
-file_six = URI.open("https://static.dw.com/image/64258094_605.jpg")
+file_six = URI.open("https://www.thetechoutlook.com/wp-content/uploads/2022/06/Untitled-design-5-22.jpg")
 listing_six.photos.attach(io: file_six, filename: "#{file_six}.png", content_type: "image/png")
 listing_six.save!
 
