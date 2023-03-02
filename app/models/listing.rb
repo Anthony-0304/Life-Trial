@@ -4,6 +4,9 @@ class Listing < ApplicationRecord
   has_many :bookings, dependent: :destroy
   has_many :reviews, through: :bookings
 
+  geocoded_by :city
+  after_validation :geocode, if: :will_save_change_to_city?
+
   validates :title, :category, :description, :price, presence: true
   validates :title, uniqueness: true
 
