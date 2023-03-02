@@ -1,4 +1,4 @@
-<h2>Add new booking</h2>
+<h2>Add a new LifeTrial</h2>
 <%= simple_form_for(@listing) do |f| %>
   <%= f.input :title %>
   <%= f.input :category, as: :select, collection: [
@@ -11,11 +11,10 @@
   <%= f.input :description %>
   <%= f.input :price %>
   <%= f.input :photos, as: :file, input_html: { multiple: true } %>
-  <%= f.submit class: "button-design"%>
+  <%= f.submit "Add LifeTrial", class: "button-design"%>
 <% end %>
 
 <%= link_to listings_path do %>
   <div class="secondary-button">
     <i class="fa-solid fa-backward"></i>
   </div>
-<% end %>
