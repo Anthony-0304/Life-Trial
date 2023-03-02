@@ -1,30 +1,32 @@
-<div class="custom-container">
-      <h1><%= @listing.title %></h1>
-  <div class="d-flex flex-row justify-content-between">
-    <div class="d-flex p-2 bd-highlight w-50">
-      <%= cl_image_tag @listing.photos.first.key, class: "listings-show-image", gravity: :face %>
-    </div>
-    <div class="d-flex flex-column ms-3 w-50">
-      <div class="p-2 bd-highlight">
-        <p class="text-start"><strong>Host: </strong><%= @listing.user.first_name %> <%= @listing.user.last_name %></p>
-        <p class="text-start"><strong>Details: </strong><%= @listing.description %></p>
-        <%# <p class="text-start"><strong>Location: </strong><%= @listing.city %></p>
-        <p class="text-start"><strong>Price: </strong>£<%= @listing.price %>0</p>
-        <p>
-          <% if @listing.user == current_user %>
-            <%= link_to "Cancel listing",
-                    listing_path(@listing),
-                    data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
-          <% end %>
-        </p>
+<div class="container">
+  <div class="custom-container">
+        <h1><%= @listing.title %></h1>
+    <div class="d-flex flex-row justify-content-between">
+      <div class="d-flex p-2 bd-highlight w-50">
+        <%= cl_image_tag @listing.photos.first.key, class: "listings-show-image", gravity: :face %>
       </div>
-      <div class="mt-auto p-2 bd-highlight"><%= render "bookings/form", listing: @listing, booking: @booking%></div>
+      <div class="d-flex flex-column ms-3 w-50">
+        <div class="p-2 bd-highlight">
+          <p class="text-start"><strong>Host: </strong><%= @listing.user.first_name %> <%= @listing.user.last_name %></p>
+          <p class="text-start"><strong>Details: </strong><%= @listing.description %></p>
+          <%# <p class="text-start"><strong>Location: </strong><%= @listing.city %></p>
+          <p class="text-start"><strong>Price: </strong>£<%= @listing.price %></p>
+          <p>
+            <% if @listing.user == current_user %>
+              <%= link_to "Cancel listing",
+                      listing_path(@listing),
+                      data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
+            <% end %>
+          </p>
+        </div>
+        <div class="mt-auto p-2 bd-highlight"><%= render "bookings/form", listing: @listing, booking: @booking%></div>
+        </div>
       </div>
     </div>
+  <%= link_to listings_path do %>
+    <div class="secondary-button">
+      <i class="fa-solid fa-backward"></i>
+    </div>
+  <% end %>
   </div>
-<%= link_to listings_path do %>
-  <div class="secondary-button">
-    <i class="fa-solid fa-backward"></i>
-  </div>
-<% end %>
 </div>
