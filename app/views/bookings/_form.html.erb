@@ -2,3 +2,9 @@
   <%= f.input :date, as: :date, html5: true %>
   <%= f.submit "Book!", class: "button-search" %>
 <% end %>
+
+<%= link_to listings_path do %>
+  <div class="secondary-button">
+    <i class="fa-solid fa-backward"></i>
+  </div>
+<% end %>

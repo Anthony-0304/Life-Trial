@@ -9,7 +9,7 @@
     'Sports People'
     ],
     prompt: 'Select Category' %>
-    <%= f.submit "Search", class: "button-search" %>
+    <%= f.submit "Search", class: "button-design" %>
   <% end %>
 
 <br>
@@ -50,4 +50,12 @@
       </div>
     </div>
   <% end %>
+
+
+<%= link_to listings_path do %>
+  <div class="secondary-button">
+    <i class="fa-solid fa-backward"></i>
+  </div>
+<% end %>
+
 </div>

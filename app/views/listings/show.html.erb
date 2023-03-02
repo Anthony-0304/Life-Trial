@@ -18,7 +18,7 @@
   <h1><%= @listing.title %></h1>
   <p><%= @listing.description %></p>
   <p>£<%= @listing.price %></p>
-  <p><%= link_to "Book!", new_listing_booking_path(@listing), class: "button-search text-decoration-none" %></p>
+  <p><%= link_to "Book!", new_listing_booking_path(@listing), class: "button-design text-decoration-none" %></p>
   <p>
     <% if @listing.user == current_user %>
       <%= link_to "Cancel listing",
@@ -26,4 +26,11 @@
               data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
     <% end %>
   </p>
+
+<%= link_to listings_path do %>
+  <div class="secondary-button">
+    <i class="fa-solid fa-backward"></i>
+  </div>
+<% end %>
+
 </div>
