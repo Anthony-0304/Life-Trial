@@ -11,5 +11,11 @@
   <%= f.input :description %>
   <%= f.input :price %>
   <%= f.input :photos, as: :file, input_html: { multiple: true } %>
-  <%= f.submit class: "button-search"%>
+  <%= f.submit class: "button-design"%>
+<% end %>
+
+<%= link_to listings_path do %>
+  <div class="secondary-button">
+    <i class="fa-solid fa-backward"></i>
+  </div>
 <% end %>
