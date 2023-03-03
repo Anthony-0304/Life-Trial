@@ -1,0 +1,12 @@
+<%= render "shared/navbar"%>
+<div class="container">
+ <%= link_to listings_path do %>
+    <div class="secondary-button">
+      <i class="fa-solid fa-arrow-left"></i>
+    </div>
+  <% end %>
+</div>
+<div class="listing-form">
+  <%= render "form", listing: @listing %>
+</div>
+<%= render "shared/footer" %>

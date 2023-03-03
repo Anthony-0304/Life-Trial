@@ -27,6 +27,13 @@ class BookingsController < ApplicationController
     end
   end
 
+  def update
+    @booking = Booking.find(params[:id])
+    @Booking.update(booking_params)
+    # No need for app/views/restaurants/update.html.erb
+    redirect_to booking_path(@booking)
+  end
+
   def destroy
     @booking = Booking.find(params[:id])
     @booking.destroy
