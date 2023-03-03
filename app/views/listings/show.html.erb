@@ -19,16 +19,21 @@
           <p class="text-start"><strong>Price: </strong>£<%= @listing.price %>0</p>
           <p>
             <% if @listing.user == current_user %>
+              <%= link_to edit_listing_path(@listing) do %>
+                <div class="secondary-button">
+                  <i class="fa-solid fa-pen-to-square"></i>
+                </div>
+              <% end %>
+            <% end %>
+            <br>
+            <br>
+            <% if @listing.user == current_user %>
               <%= link_to listing_path(@listing), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} do %>
                 <div class="secondary-button">
                   <i class="fa-solid fa-trash"></i>
                 </div>
               <% end %>
             <% end %>
-            <% if @listing.user == current_user %>
-            <%= link_to "Amend listing",
-            edit_listing_path(@listing) %>
-            <%end%>
           </p>
         </div>
         <div class="mt-auto p-2 bd-highlight"><%= render "bookings/form", listing: @listing, booking: @booking%></div>
