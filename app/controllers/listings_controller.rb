@@ -14,13 +14,19 @@ class ListingsController < ApplicationController
       @title = "A Day in the Life of..."
       @listings = Listing.all
     end
-
     if params[:query].present?
       sql_query = <<~SQL
         listings.title @@ :query
         OR listings.description @@ :query
+        OR listings.category @@ :query
       SQL
+      @title = "A Day in the Life results for: #{params[:query]}"
       @listings = Listing.joins(:user).where(sql_query, query: "%#{params[:query]}%")
+    else
+      @listings = Listing.all
+    end
+    if params[:query].present?
+      @listings = Listing.where("title ILIKE ?", "%#{params[:query]}%")
     else
       @listings = Listing.all
     end
