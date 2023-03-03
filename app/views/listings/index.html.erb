@@ -32,7 +32,6 @@
     <p class="text-start"> There are no results for your search 💔 </p>
   <% end %>
 
-  <%# <div class="d-flex flex-wrap justify-content-evenly p-2 bd-highlight"> %>
   <div class="listings_display">
     <% @listings.each do |listing| %>
       <div class="card-design" style="width: 18rem;">
@@ -51,25 +50,22 @@
   <% if user_signed_in? %>
     <% if @my_listings.present? %>
       <hr>
-      <h3>My Listings</h3>
+      <h3>My LifeTrials</h3>
     <% end %>
 
-  <%# <div class="d-flex flex-wrap justify-content-evenly p-2 bd-highlight"> %>
-
-  <div class="listings_display">
-    <% @my_listings.each do |listing| %>
-      <%= link_to listing_path(listing) do %>
+    <div class="listings_display">
+      <% @my_listings.each do |listing| %>
         <div class="card-design" style="width: 18rem;" >
-          <%= cl_image_tag listing.photos.first.key, class: "card-img-top", height: 150, gravoty: :auto %>
-          <div class="card-body-design">
-            <p class="card-text-design"><%= listing.title %></p>
-            <p class="card-text-design"><%= link_to "View", listing_path(listing), class: "button-design" %></p>
-          </div>
+          <%= link_to listing_path(listing) do %>
+            <%= cl_image_tag listing.photos.first.key, class: "card-design-img-top", height: 150, gravoty: :auto %>
+            <div class="card-body-design text-decoration-none">
+              <p class="card-text-design"><%= listing.title %></p>
+              <p class="card-text-design"><%= link_to "View", listing_path(listing), class: "button-design" %></p>
+            </div>
+          <% end %>
         </div>
-      <% end %>
       <% end %>
     </div>
   <% end %>
-
 </div>
 <%= render "shared/footer" %>
