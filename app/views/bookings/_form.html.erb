@@ -1,5 +1,5 @@
 <div class="booking-form">
-  <h4>Make a reservation!</h4>
+  <h4 style="color: #E5E5E5">Make a reservation!</h4>
   <%= simple_form_for([listing, booking]) do |f| %>
     <%= f.input :date, as: :date, html5: true, label: 'Select a date:' %>
     <%= f.submit "Reserve #{listing.user.first_name.capitalize}'s day now!", class: "button-design" %>

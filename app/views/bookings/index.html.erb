@@ -16,20 +16,18 @@
     <div class="card-product">
       <%= cl_image_tag booking.listing.photos.first.key, class: "card-product-img", gravity: :auto %>
       <div class="card-product-infos">
-        <div class="d-flex align-items-center justify-content-between">
-          <h2 style="color: #14213D"><strong><%= booking.listing.title %></strong></h2>
-          <%= link_to booking_path(booking), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} do %>
-              <div class="secondary-button">
-                <p><i class="fa-solid fa-trash"></i> Delete this booking</p>
-              </div>
-            <% end %>
-          </div>
-        <p><strong>Details: </strong><%= booking.listing.description %></p>
-        <p><strong>Price: </strong>£<%= booking.listing.price %></p>
-        <p><strong>Date: </strong><%= booking.date %></p>
+        <h2 style="color: #14213D"><strong><%= booking.listing.title %></strong></h2>
+        <p><strong>Details: </strong><%= booking.listing.description %><br>
+        <strong>Price: </strong>£<%= booking.listing.price %><br>
+        <strong>Date: </strong><%= booking.date %></p><br>
       </div>
+      <%= link_to booking_path(booking), class: "align-items: flex-end", data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} do %>
+          <div class="secondary-button">
+            <p style="font-size: 12px"><i class="fa-solid fa-trash"></i> Delete this booking</p>
+          </div>
+      <% end %>
     </div>
-    <% end %>
+  <% end %>
 </div>
 
 <div class="fixed-bottom">
