@@ -19,9 +19,11 @@
           <p class="text-start"><strong>Price: </strong>£<%= @listing.price %>0</p>
           <p>
             <% if @listing.user == current_user %>
-              <%= link_to "Cancel listing",
-                      listing_path(@listing),
-                      data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
+              <%= link_to listing_path(@listing), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} do %>
+                <div class="secondary-button">
+                  <i class="fa-solid fa-trash"></i>
+                </div>
+              <% end %>
             <% end %>
             <% if @listing.user == current_user %>
               <%= link_to "Amend listing",
