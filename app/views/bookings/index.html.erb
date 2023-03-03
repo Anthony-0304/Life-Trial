@@ -22,12 +22,9 @@
         <p><%= link_to "Cancel booking",
           booking_path(booking),
           data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %></p>
-          <p><%= link_to "Amend booking",
-          booking_path(booking),
-          data: {turbo_method: :patch, turbo_confirm: "Are you sure?"} %></p>
+          <% end %>
       </div>
     </div>
-  <% end %>
 </div>
 
 <div class="fixed-bottom">

@@ -24,9 +24,9 @@
                       data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
             <% end %>
             <% if @listing.user == current_user %>
-              <%= link_to "Amend listing",
-                       edit_listing_path(@listing) %>
-                      <% end %>
+            <%= link_to "Amend listing",
+            edit_listing_path(@listing) %>
+            <%end%>
           </p>
         </div>
         <div class="mt-auto p-2 bd-highlight"><%= render "bookings/form", listing: @listing, booking: @booking%></div>
