@@ -58,6 +58,17 @@ class ListingsController < ApplicationController
     end
   end
 
+  def update
+    @listing = Listing.find(params[:id])
+    @listing.update(listing_params)
+    # No need for app/views/restaurants/update.html.erb
+    redirect_to listing_path(@listing)
+  end
+
+  def edit
+    @listing = Listing.find(params[:id])
+  end
+
   def destroy
     @listing = Listing.find(params[:id])
     @listing.destroy
