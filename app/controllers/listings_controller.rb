@@ -9,26 +9,18 @@ class ListingsController < ApplicationController
     # The code below enables a filtered search
     # There is a listing class method to ensure that if search is nil, all Listings are displayed
     search = params[:search]
-    if search.present?
-      @title = "A Day in the Life results for: #{search[:category]}"
-      @listings = Listing.where(category: search[:category])
-    else
-      @title = "A Day in the Life of..."
-      @listings = Listing.all
-    end
     if params[:query].present?
       sql_query = <<~SQL
-        listings.title @@ :query
-        OR listings.description @@ :query
-        OR listings.category @@ :query
+        listings.title ILIKE :query
+        OR listings.description ILIKE :query
+        OR listings.category ILIKE :query
+        OR users.first_name ILIKE :query
       SQL
-      @title = "A Day in the Life results for: #{params[:query]}"
       @listings = Listing.joins(:user).where(sql_query, query: "%#{params[:query]}%")
-    else
-      @listings = Listing.all
-    end
-    if params[:query].present?
-      @listings = Listing.where("title ILIKE ?", "%#{params[:query]}%")
+      @search_copy = "Showing search results for: #{params[:query]}"
+    elsif search.present?
+      @search_copy = "Showing filter results for: #{search[:category]}"
+      @listings = Listing.where(category: search[:category])
     else
       @listings = Listing.all
     end
