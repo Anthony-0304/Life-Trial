@@ -1,33 +1,50 @@
 <%= render "shared/navbar"%>
 <div class="container">
-  <h4>Search by keyword</h4>
-
-  <%= form_with url: listings_path, method: :get, class: "d-flex" do %>
-    <%= text_field_tag :query,
-      params[:query],
-      class: "form-control",
-      placeholder: "Search Listings"
-    %>
-    <%= submit_tag "Search", class: "btn btn-primary" %>
-  <% end %>
-
-  <h4>Search by category</h4>
-
-    <%= simple_form_for :search, url: listings_path, method: "GET", html: { class: 'form-inline' } do |f| %>
-      <%= f.input :category, as: :select, collection: [
-      'Actors & Actresses',
-      'Musicians',
-      'Record Breakers',
-      'Royalty',
-      'Sports People'
-      ],
-      prompt: 'Select Category' %>
-      <%= f.submit "Search", class: "button-design" %>
-    <% end %>
-
+  <div class="d-flex justify-content-between p-2">
+    <h1>A Day in the Life of...</h1>
+    <%= link_to "✚ LifeTrial", new_listing_path, class: "button-design" %>
+  </div>
   <br>
-
-  <h3><%= @title %></h3>
+  <div class="d-flex p-2 bd-highlight justify-content-around" style="background-color: #14213D; border-radius: 24px">
+    <div class="d-inline-flex flex-column w-50 p-2">
+      <h4 style="color: #ffffff">Search by keyword</h4>
+      <%= form_with url: listings_path, method: :get, class: "d-flex my-1 align-content-end" do %>
+        <%= text_field_tag :query,
+          params[:query],
+          class: "form-control",
+          style: "border-radius: 24px",
+          placeholder: "Search LifeTrial"
+        %>
+        <%= submit_tag "Search", class: "button-design mx-1" %>
+      <% end %>
+    </div>
+    <div class="d-inline-flex flex-column w-50 p-2">
+      <h4 style="color: #ffffff">Filter by category</h4>
+      <%= simple_form_for :search, url: listings_path, method: "GET", html: { class: 'd-flex my-1 align-content-end' } do |f| %>
+        <%= f.input_field :category, as: :select, label: false, collection: [
+          'Actors & Actresses',
+          'Musicians',
+          'Record Breakers',
+          'Royalty',
+          'Sports People'
+          ],
+          prompt: 'Select Category',
+          class: "form-control",
+          style: "border-radius: 24px"
+          %>
+        <%= f.submit "Filter", class: "button-design mx-2" %>
+      <% end %>
+    </div>
+    <div class="d-flex align-items-end w-10 my-1 p-2">
+      <%= link_to listings_path do %>
+        <div class="button-design">
+         <i class="fa-solid fa-rotate"></i>
+        </div>
+      <% end %>
+    </div>
+  </div>
+  <br>
+  <h3><%= @search_copy %></h3>
   <% if @listings.empty? %>
     <p class="text-start"> There are no results for your search 💔 </p>
   <% end %>
@@ -38,9 +55,10 @@
         <%= link_to listing_path(listing), class: "text-decoration-none" do %>
           <%= cl_image_tag listing.photos.first.key, class: "card-design-img-top", height: 150, gravity: :auto %>
           <div class="card-body-design text-decoration-none">
-            <p class="card-text-design"><%=listing.title%></p>
-            <p class="card-text-design">£<%=listing.price %>0</p>
-            <p class="card-text-design"><%= link_to "Find out more", listing_path(listing), class: "button-design" %></p>
+            <p class="card-text-design"><strong><%=listing.title%></strong><br>
+            <strong>Details: </strong><%= listing.description.truncate(50) %><br>
+            <strong>Price: </strong>£<%=listing.price %>0<br></p>
+            <%= link_to "Find out more", listing_path(listing), class: "button-design" %>
           </div>
         <% end %>
       </div>
@@ -54,18 +72,20 @@
     <% end %>
 
     <div class="listings_display">
-      <% @my_listings.each do |listing| %>
-        <div class="card-design" style="width: 18rem;" >
-          <%= link_to listing_path(listing) do %>
-            <%= cl_image_tag listing.photos.first.key, class: "card-design-img-top", height: 150, gravoty: :auto %>
-            <div class="card-body-design text-decoration-none">
-              <p class="card-text-design"><%= listing.title %></p>
-              <p class="card-text-design"><%= link_to "View", listing_path(listing), class: "button-design" %></p>
-            </div>
-          <% end %>
-        </div>
-      <% end %>
-    </div>
+    <% @my_listings.each do |listing| %>
+      <div class="card-design" style="width: 18rem;">
+        <%= link_to listing_path(listing), class: "text-decoration-none" do %>
+          <%= cl_image_tag listing.photos.first.key, class: "card-design-img-top", height: 150, gravity: :auto %>
+          <div class="card-body-design text-decoration-none">
+            <p class="card-text-design"><strong><%=listing.title%></strong><br>
+            <strong>Details: </strong><%= listing.description.truncate(50) %><br>
+            <strong>Price: </strong>£<%=listing.price %>0<br></p>
+            <%= link_to "View", listing_path(listing), class: "button-design" %>
+          </div>
+        <% end %>
+      </div>
+    <% end %>
+  </div>
   <% end %>
 </div>
 <%= render "shared/footer" %>
