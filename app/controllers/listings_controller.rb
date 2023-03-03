@@ -1,3 +1,5 @@
+require "open-uri"
+
 class ListingsController < ApplicationController
   skip_before_action :authenticate_user!, only: :index
   before_action :set_user, only: %i[new create show]
@@ -38,6 +40,11 @@ class ListingsController < ApplicationController
   def create
     @listing = Listing.new(listing_params)
     @listing.user = @user
+    if @listing.photos.empty?
+      image = URI.open("https://res.cloudinary.com/daiq2cytf/image/upload/v1677682678/Screenshot_2023-03-01_at_14.52.11_kfkg4f.png")
+      @listing.photos.attach(io: image, filename: "#{image}.png", content_type: "image/png")
+      @listing.save
+    end
     if @listing.save
       redirect_to listing_path(@listing)
     else
